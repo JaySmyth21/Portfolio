@@ -6,7 +6,7 @@ import  Link  from 'next/link'
 import {ThemeProvider} from 'next-themes'
 import Providers from './providers'
 import ThemeSwitcher from './ThemeSwitcher'
-import Head from 'next/head'
+
 // layout for the site portion of the website
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,9 +26,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <Head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </Head>
+      
       
       <body className="max-w-3xl mx-auto py-10 ">
         <Providers>

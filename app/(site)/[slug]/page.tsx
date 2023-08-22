@@ -1,6 +1,5 @@
 import { getPage } from "@/sanity/sanity-utils"
 import { PortableText } from "@portabletext/react";
-
 // displays nav-bar page title and content depending on the slug
 type Props = {
     params: {slug: string}
@@ -12,7 +11,7 @@ export default async function Page({params}: Props) {
     return (
         <div>
             <h1 className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold">{page.title}</h1>
-            <div className="text-lg mt-10">
+            <div className="text-lg  mt-10">
                 <PortableText value={page.content}/>
             </div>
         </div>
