@@ -1,3 +1,4 @@
+// Schema accessed in sanity studio
 const project = {
     name: "project",
     title: "Projects",

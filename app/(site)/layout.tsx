@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import  Link  from 'next/link'
 
+// layout for the site portion of the website
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,12 +17,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   // get all pages
   const pages = await getPages();
 
   return (
-    <html lang="en">
-      <body className="max-w-3xl mx-auto py-10">
+    <html lang="en" className="dark">
+      <body className="max-w-3xl mx-auto py-10 dark:bg-gray-900">
         <header className='flex items-center justify-between'>
           <Link href="/"
           className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold"
@@ -29,7 +31,7 @@ export default async function RootLayout({
             Jason
           </Link>
 
-          <div className="flex items-center gap-5 text-sm text-gray-600">
+          <div className="flex items-center gap-5 text-xl text-slate-50">
             {pages.map((page) => (
               <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
                 {page.title}

@@ -16,7 +16,7 @@ export async function getProjects(): Promise<Project[]> {
           }`
     )
 }
-//Fetches single page project from click id
+//Fetches a single page project 
 export async function getProject(slug: string): Promise<Project> {
     return createClient(clientConfig).fetch(
         groq`*[_type == "project" && slug.current == $slug][0]{
@@ -31,7 +31,7 @@ export async function getProject(slug: string): Promise<Project> {
           { slug }
     )
 }
-
+//Fetches content for pages 
 export async function getPages(): Promise<Page[]> {
     return createClient(clientConfig).fetch(
         groq`*[_type == "page"]{
@@ -42,7 +42,7 @@ export async function getPages(): Promise<Page[]> {
         }`
     )
 }
-
+// Fetches a single page 
 export async function getPage(slug: string): Promise<Page>{
     return createClient(clientConfig).fetch(
         groq`*[_type == "page" && slug.current == $slug][0]{

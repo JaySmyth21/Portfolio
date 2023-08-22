@@ -1,6 +1,6 @@
 import { getPage } from "@/sanity/sanity-utils"
 import { PortableText } from "@portabletext/react";
-
+// displays nav-bar page title and content depending on the slug
 type Props = {
     params: {slug: string}
 }

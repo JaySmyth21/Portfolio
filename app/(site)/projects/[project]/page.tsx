@@ -1,7 +1,7 @@
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from '@portabletext/react';
 import Image from "next/image"
-
+// displays individual project page content
 type Props = {
   params: { project: string }
 }
