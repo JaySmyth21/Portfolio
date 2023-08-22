@@ -3,7 +3,10 @@ import '../globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import  Link  from 'next/link'
-
+import {ThemeProvider} from 'next-themes'
+import Providers from './providers'
+import ThemeSwitcher from './ThemeSwitcher'
+import Head from 'next/head'
 // layout for the site portion of the website
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,26 +26,29 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="dark">
-      <body className="max-w-3xl mx-auto py-10 dark:bg-gray-900">
-        <header className='flex items-center justify-between'>
-          <Link href="/"
-          className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold"
-          >
-            Jason
-          </Link>
-
-          <div className="flex items-center gap-5 text-xl text-slate-50">
-            {pages.map((page) => (
-              <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
-                {page.title}
-              </Link>
-            ))}
-          </div>
-        </header>
-        <main className="py-20">{children}</main>
+      <Head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </Head>
       
-      
-      
+      <body className="max-w-3xl mx-auto py-10 ">
+        <Providers>
+          <header className='flex items-center justify-between'>
+            <Link href="/"
+            className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold"
+            >
+              Jason
+            </Link>
+            <ThemeSwitcher/>
+            <div className="flex items-center gap-5 text-xl ">
+              {pages.map((page) => (
+                <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
+                  {page.title}
+                </Link>
+              ))}
+            </div>
+          </header>
+          <main className="py-20">{children}</main>
+        </Providers>
       </body>
     </html>
   )

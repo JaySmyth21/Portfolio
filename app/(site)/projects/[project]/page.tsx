@@ -18,7 +18,7 @@ export default async function Project({ params }: Props) {
       </a>
     </header>
 
-    <div className="text-lg text-gray-700 mt-5">
+    <div className="text-lg mt-5">
       <PortableText value={project.content} />
     </div>
 
