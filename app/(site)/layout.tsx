@@ -36,13 +36,14 @@ export default async function RootLayout({
             >
               Jason
             </Link>
-            <ThemeSwitcher/>
+           
             <div className="flex items-center gap-5 text-xl ">
               {pages.map((page) => (
                 <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
                   {page.title}
                 </Link>
               ))}
+               <ThemeSwitcher/>
             </div>
           </header>
           <main className="py-20">{children}</main>
