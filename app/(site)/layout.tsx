@@ -28,16 +28,15 @@ export default async function RootLayout({
     <html lang="en" className="dark">
       
       
-      <body className="max-w-3xl mx-auto py-10 ">
+      <body className=" mx-auto ">
         <Providers>
-          <header className='flex items-center justify-between'>
-            <Link href="/"
-            className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-lg font-bold"
-            >
+          <header className='w-full flex items-center justify-between border-b mt-2 pl-5 pr-5 pb-1'>
+            <Link href="/" className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-xl font-bold">
               Jason
             </Link>
            
             <div className="flex items-center gap-5 text-xl ">
+              <Link href={`/`} className='hover:underline'>Home</Link>
               {pages.map((page) => (
                 <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
                   {page.title}
