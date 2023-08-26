@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+[data-theme="dark"] {
+    
+}
+
+[data-theme="light"]{
+    
+    background-image: linear-gradient(to bottom, #f9fafb, #cbd5e1);
+    
+}

@@ -30,7 +30,7 @@ export default async function RootLayout({
       
       <body className=" mx-auto ">
         <Providers>
-          <header className='w-full flex items-center justify-between border-b mt-2 pl-5 pr-5 pb-1'>
+          <header className='w-full flex items-center justify-between border-b border-stone-800 pl-11 pr-5 h-20 bg-gradient-to-r from-indigo-400 to-cyan-400'>
             <Link href="/" className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-xl font-bold">
               Jason
             </Link>
