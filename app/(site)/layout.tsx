@@ -6,6 +6,7 @@ import  Link  from 'next/link'
 import {ThemeProvider} from 'next-themes'
 import Providers from './providers'
 import ThemeSwitcher from './ThemeSwitcher'
+import { Container } from 'postcss'
 
 // layout for the site portion of the website
 const inter = Inter({ subsets: ['latin'] })
@@ -30,24 +31,48 @@ export default async function RootLayout({
       
       <body className="  " id="page-container">
         <Providers>
-          <header className='w-full flex items-center justify-between border-b border-stone-800 pl-11 pr-5 h-20 bg-gradient-to-r from-indigo-400 to-cyan-400'>
-            <Link href="/" className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-xl font-bold">
-              Jason
-            </Link>
-           
-            <div className="flex items-center gap-5 text-xl ">
-              <Link href={`/`} className='hover:underline'>Home</Link>
-              {pages.map((page) => (
-                <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
-                  {page.title}
+          
+          <div className="bg-stone-500 absolute top-0 left-0  w-1/5 flex justify-center h-screen">
+            <div className='flex justify-center grid grid-cols-1 gap-y-20 h-8'>
+              <div className='flex justify-center'>
+                <Link href="/" className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-xl font-bold ">
+                  Jason
                 </Link>
-              ))}
-               <ThemeSwitcher/>
+              </div>
+              <div className=' text-xl'>
+                <div className='flex justify-center'>
+                  <Link href="/">
+                    Home
+                  </Link>
+                </div>
+                <div className='flex justify-center'>
+                  <Link href="/">
+                    About
+                  </Link>
+                </div>
+                <div className='flex justify-center'>
+                  <Link href="/">
+                    Portfolio
+                  </Link>
+                </div>
+                <div className='flex justify-center'>
+                  <Link href="/">
+                    Contact
+                  </Link>
+                </div>
+                <div className='flex justify-center'>
+                  <ThemeSwitcher/>
+                </div>
+              </div>
             </div>
-          </header>
-          <main className="py-20">{children}</main>
+          </div>
+        
+          
+            
+         
+          {/*<main className="py-20">{children}</main>}
 
-          <footer className="bg-white dark:bg-gray-900 pb-3" id="footer">
+          {/* <footer className="bg-white dark:bg-gray-900 pb-3" id="footer">
             <div className=" pt-8 sm:flex sm:items-center sm:justify-between py-4 px-9">
                 <ul>
                   <li className="flex flex-wrap justify-center gap-4 text-lg lg:justify-end text-gray-700 transition hover:opacity-75 dark:text-gray-200">
@@ -182,7 +207,7 @@ export default async function RootLayout({
                 </ul>
               </div>
             
-          </footer>
+          </footer> */}
           
         
         </Providers>
